@@ -56,19 +56,19 @@ public class RadioTest {
         Assertions.assertEquals(expected, actual);
     }
 
-    @ParameterizedTest
-    @CsvFileSource(files = "src/test/resources/dataIncreaseVol.csv")
+    //@ParameterizedTest
+    // @CsvFileSource(files = "src/test/resources/dataIncreaseVol.csv")
 
-    public void shouldIncreaseVolume(int expected, int newCurrentVolume) {
+    // public void shouldIncreaseVolume(int expected, int newCurrentVolume) {
 
-        radio.setCurrentVolume(newCurrentVolume);
-        radio.increaseVolume();
+    //    radio.setCurrentVolume(newCurrentVolume);
+    //    radio.increaseVolume();
 
-        int actual = radio.getCurrentVolume();
+    //    int actual = radio.getCurrentVolume();
 
-        Assertions.assertEquals(expected, actual);
+    //    Assertions.assertEquals(expected, actual);
 
-    }
+    // }
 
     // @ParameterizedTest
     // @CsvFileSource(files = "src/test/resources/dataDecreaseVol.csv")
