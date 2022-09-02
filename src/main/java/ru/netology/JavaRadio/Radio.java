@@ -1,9 +1,18 @@
 package ru.netology.JavaRadio;
 
 public class Radio {
-
-    protected int currentStation;
+    protected int maxVolume = 100;
     protected int currentVolume;
+    protected int maxStation;
+    protected int currentStation;
+
+    public Radio() {
+        maxStation = 9;
+    }
+
+    public Radio(int numStation) {
+        maxStation = numStation - 1;
+    }
 
     public int getCurrentStation() {
         //получение текущей станции
@@ -15,12 +24,20 @@ public class Radio {
         return currentVolume;
     }
 
+    public int getMaxStation() {
+        return maxStation;
+    }
+
+    public int getMaxVolume(){
+        return maxVolume;
+    }
+
     public void setCurrentStation(int newCurrentStation) {
         //изменение текущей станции
         if (newCurrentStation < 0) {
             return;
         }
-        if (newCurrentStation > 9) {
+        if (newCurrentStation > maxStation) {
             return;
         }
         currentStation = newCurrentStation;
@@ -32,7 +49,7 @@ public class Radio {
         if (newCurrentVolume < 0) {
             return;
         }
-        if (newCurrentVolume > 10) {
+        if (newCurrentVolume > maxVolume) {
             return;
         }
         currentVolume = newCurrentVolume;
@@ -40,7 +57,7 @@ public class Radio {
 
     public void next() {
         //переключение станции на следующую
-        if (currentStation == 9) {
+        if (currentStation == maxStation) {
             currentStation = 0;
         } else {
             currentStation = currentStation + 1;
@@ -50,7 +67,7 @@ public class Radio {
     public void prev() {
         //переключение станции на предыдущую
         if (currentStation == 0) {
-            currentStation = 9;
+            currentStation = maxStation;
         } else {
             currentStation = currentStation - 1;
         }
